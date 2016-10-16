@@ -13,18 +13,23 @@ bot.on('botReady', () => {
 })
 
 bot.on('createdMessage', (message) => {
-  if (message.content.startsWith(`${prefix}hello`)) {
-    bot.makeMessage(message.channel_id, 'hi there!')
+  var m = message.content
+  var channelID = message.channel_id;
+  if (m.startsWith(`${prefix}hello`)) {
+    bot.makeMessage(channelID, 'hi there!')
   }
-  if (message.content.startsWith(`${prefix}invitelink`)) {
-    bot.makeMessage(message.channel_id, 'Thanks for asking!\nhttps://discordapp.com/oauth2/authorize?client_id=237317700043538433&scope=bot')
+  if (m.startsWith(`${prefix}invitelink`)) {
+    bot.makeMessage(channelID, 'Thanks for asking!\nhttps://discordapp.com/oauth2/authorize?client_id=237317700043538433&scope=bot')
   }
-  if (message.content.startsWith(`${prefix}help`)) {
-    bot.makeMessage(message.channel_id, ':gem: Garnet Bot :gem: \nPrefix - g~ \nhello - hello there! \ninvitelink - sends the invitelink')
+  if (m.startsWith(`${prefix}help`)) {
+    bot.makeMessage(channelID, ':gem: Garnet Bot :gem: \nPrefix - g~ \nhello - hello there! \ninvitelink - sends the invitelink')
   }
-  if (message.content.startsWith(`${prefix}ping`)) {
+  if (m.startsWith(`${prefix}ping`)) {
     var realGame = games[Math.floor(Math.random() * games.length)];
-    bot.makeMessage(message.channel_id, "Pong, hey there. `" + realGame + "`")
+    bot.makeMessage(channelID, "Pong, hey there. `" + realGame + "`")
+  }
+  if (m.startsWith(`${prefix}status`)) {
+    bot.makeMessage(channelID, "I'm alive!")
   }
   if (message.content.startsWith(`${prefix}status`)) {
     bot.makeMessage(message.channel_id, "I'm alive!")
