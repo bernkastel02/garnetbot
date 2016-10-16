@@ -26,6 +26,8 @@ bot.on('createdMessage', (message) => {
     var realGame = games[Math.floor(Math.random() * games.length)];
     bot.makeMessage(message.channel_id, "Pong, hey there. `" + realGame + "`")
   }
+  if (message.content.startsWith(`${prefix}lib`)) {
+    bot.makeMessage(message.channel_id, "I am built on the test lib **Discord.HTC**. Join the server here! https://discord.gg/fD3vFcX")
 })
 
 bot.connect()
