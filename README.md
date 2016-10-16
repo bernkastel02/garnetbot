@@ -1,0 +1,2 @@
+# garnetbot
+Discord.HTC bot.
