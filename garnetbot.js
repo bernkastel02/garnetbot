@@ -34,6 +34,8 @@ bot.on('createdMessage', (message) => {
   if (message.content.startsWith(`${prefix}status`)) {
     bot.makeMessage(message.channel_id, "I'm alive!")
   }
+  if (message.content.startsWith(`${prefix}lib`)) {
+    bot.makeMessage(message.channel_id, "I am built on the test lib **Discord.HTC**. Join the server here! https://discord.gg/fD3vFcX")
 })
 
 bot.connect()
