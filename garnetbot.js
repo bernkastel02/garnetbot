@@ -2,7 +2,7 @@
 This is a test bot for Discord.HTC
 */
 const DHTC = require('discord.htc')
-var bot = new DHTC('token goes here bitch')
+var bot = new DHTC('my token retard')
 var prefix = 'g~'
 
 var games = ["'I'm not cleaning up this mess.'", "'I thought violence would be the answer.'", "'We don't need to be careful. We just need to be huge.'" ,"'I can't say no to that face.'"]
