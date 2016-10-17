@@ -4,7 +4,7 @@ This is a test bot for Discord.HTC
 
 //[VARIABLES]
 const DHTC = require('discord.htc')
-var bot = new DHTC('token private')
+var bot = new DHTC('kk')
 var prefix = 'g~'
 var ver = "1.2"
 //[/VARIABLES]
@@ -22,10 +22,10 @@ bot.on('botReady', () => {
 })
 
 bot.on('createdMessage', (message) => {
-  var suff = message.content.split(' ')[0].substring(1); //since i need this it exists. don't complain alright?
-	var suffix = message.content.substring(suff.length+2)
   var m = message.content
   var channelID = message.channel_id;
+  let args = m.split(" ");
+  var argAct = args[1];
 
   if (m.startsWith(`${prefix}hello`)) {
     bot.uploadFile(channelID, "hi!", "./hello.png")
@@ -50,9 +50,7 @@ bot.on('createdMessage', (message) => {
     bot.makeMessage(channelID, ":gem: gαяηєт вσт :gem: \nVersion: "+ ver + " \nPrefix: g~ \nCreated by Charia#6059 \nSo far nekonez#6986 and jack ✗#5403 have contributed to this amazing bot. Sarcasm is such a great thing.")
   }
   if (m.startsWith(`${prefix}say`)) {
-    var suff = m.split(' ')[0].substring(1);
-    var suffix = m.substring(suff.length+2)
-    bot.makeMessage(channelID, ":gem: gαяηєт вσт :gem: \n " + suffix)
+    bot.makeMessage(channelID, ":gem: gαяηєт вσт :gem: \n " + argAct)
   }
 })
 
